@@ -1,0 +1,6 @@
+python model_main.py \
+    --pipeline_config_path=/home/pranit/Desktop/white_blood_cell_project/embedded_ssd_mobilenet_v1_coco.config \
+    --model_dir=/home/pranit/Desktop/white_blood_cell_project/model \
+    --num_train_steps=5000 \
+    --sample_1_of_n_eval_examples=1000	 \
+    --alsologtostderr

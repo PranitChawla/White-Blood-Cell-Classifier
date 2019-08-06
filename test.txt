@@ -1,0 +1,13 @@
+python object_detection/model_main.py \
+    --pipeline_config_path=/home/pranit/Desktop/white_blood_cell_project/faster_rcnn_inception_v2_coco.config \
+    --model_dir=/home/pranit/Desktop/white_blood_cell_project/model \
+    --num_train_steps=200000 \
+    --sample_1_of_n_eval_examples=10 \
+    --alsologtostderr
+
+python object_detection/dataset_tools/create_pascal_tf_record.py \
+    --label_map_path=object_detection/data/pascal_label_map.pbtxt \
+    --data_dir=object_detection/VOCdevkit --year=VOC2012 --set=train \
+    --output_path=pascal_train.record
+
+tensorboard --logdir=/media/ursamajor/66832096-52e4-43eb-8028-36a8f03ba2101/training_data/testing_combined_object_detection/swimmingpool_1/model --port=4010
